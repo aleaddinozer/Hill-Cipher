@@ -68,9 +68,9 @@ def decryption(cipher_text, key):
     decrypted_text = np.matmul(cipher_text, inv_key)
     arr = ""
 	
-	#flat : lets us to iterate over entries of array without wasting memory
-    for i in np.array(decrypted_text, dtype=int).flat:
-        arr += chr(i)
+    #flat : lets us to iterate over entries of array without wasting memory
+    for i in decrypted_text.flat:
+        arr += chr(int(round(i)))
     
     print("decrypted text:\n",arr)
     
